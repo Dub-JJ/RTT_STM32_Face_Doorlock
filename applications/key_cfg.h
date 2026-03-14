@@ -12,16 +12,17 @@
 
 #include <rtthread.h>
 #include <rtdevice.h>
+#include "drv_common.h"
 
 /* 引脚编号，通过查看设备驱动文件drv_gpio.c确定 */
 #ifndef BEEP_PIN_NUM
-    #define BEEP_PIN_NUM            24  /* PB8 */
+    #define BEEP_PIN_NUM            GET_PIN(B, 8)
 #endif
 #ifndef KEY0_PIN_NUM
-    #define KEY0_PIN_NUM            66  /* PD8 */
+    #define KEY0_PIN_NUM            GET_PIN(E, 2)
 #endif
 #ifndef KEY1_PIN_NUM
-    #define KEY1_PIN_NUM            67  /* PD9 */
+    #define KEY1_PIN_NUM            GET_PIN(E, 3)
 #endif
 
 void io_init(void);
